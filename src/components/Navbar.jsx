@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom"
-import logo from "../assets/tds-logo.png"
-
+import logo from "../assets/tds-logo.png";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -16,7 +15,7 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="navbar">
         <NavLink className="brand" to="/">
-          <img alt="TDS logo" className="brand-logo" src={logo} />
+      <img src={logo} alt="TDS Logo" />
         </NavLink>
 
         <div className="nav-links">

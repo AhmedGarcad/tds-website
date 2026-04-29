@@ -731,6 +731,78 @@ body {
   justify-content: center;
 }
 
+.status-card,
+.auth-card,
+.upload-manager {
+  margin-bottom: 24px;
+}
+
+.auth-form,
+.upload-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.auth-form label,
+.upload-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--tds-ink);
+  font-weight: 700;
+}
+
+.auth-form input,
+.upload-form input,
+.upload-form textarea {
+  width: 100%;
+  border: 1px solid var(--tds-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--tds-ink);
+  background: #ffffff;
+}
+
+.upload-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.upload-form__wide {
+  grid-column: 1 / -1;
+}
+
+.upload-form__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.auth-summary {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.feedback {
+  margin: 0 0 20px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.feedback--success {
+  background: rgba(32, 170, 96, 0.12);
+  color: #177045;
+}
+
+.feedback--error {
+  background: rgba(210, 68, 68, 0.12);
+  color: #a12626;
+}
+
 .upload-dropzone {
   display: grid;
   place-items: center;
@@ -752,6 +824,15 @@ body {
 .documents-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 24px;
+}
+
+.documents-groups {
+  display: grid;
+  gap: 28px;
+}
+
+.documents-group .section-heading {
+  margin-bottom: 18px;
 }
 
 .document-card {
@@ -783,6 +864,12 @@ body {
 .document-card p {
   color: var(--tds-muted);
   line-height: 1.7;
+}
+
+.document-meta {
+  margin-top: 8px;
+  color: var(--tds-muted);
+  font-size: 0.92rem;
 }
 
 .document-badge {
@@ -825,6 +912,11 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 18px;
+}
+
+.nav-button--danger {
+  background: #b62a2a;
+  color: #ffffff;
 }
 
 .site-footer {
@@ -870,7 +962,8 @@ body {
   .vision-mission-grid,
   .two-column-panel,
   .service-grid,
-  .implementation-grid {
+  .implementation-grid,
+  .upload-form {
     grid-template-columns: 1fr;
   }
 
