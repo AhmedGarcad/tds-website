@@ -15,6 +15,7 @@
 
 body {
   color: var(--tds-ink);
+  overflow-x: hidden;
 }
 
 .site-shell {
@@ -968,20 +969,40 @@ body {
     padding: 14px 0;
   }
 
+  .brand {
+    justify-content: center;
+  }
+
   .nav-links {
     width: 100%;
-    justify-content: center;
-    gap: 10px 14px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 2px 10px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-link {
     font-size: 0.92rem;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: nowrap;
+    padding: 10px 0 4px;
   }
 
   .nav-actions {
     width: 100%;
-    grid-template-columns: 1fr;
-    justify-content: stretch;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .nav-button,
@@ -1072,14 +1093,17 @@ body {
   }
 
   .nav-links {
-    gap: 8px 12px;
+    gap: 8px;
+    padding-bottom: 8px;
   }
 
   .nav-link {
     font-size: 0.88rem;
+    padding-top: 8px;
   }
 
   .nav-actions {
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
@@ -1087,7 +1111,7 @@ body {
   .cta-button {
     font-size: 0.92rem;
     min-height: 44px;
-    padding: 11px 14px;
+    padding: 10px 12px;
   }
 
   .hero-panel--brand::after {
@@ -1171,6 +1195,10 @@ body {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .hero-actions .cta-button {
+    width: 100%;
   }
 
   .upload-dropzone {
